@@ -6,7 +6,7 @@ public:
 
         bool firstColZero = false;
 
-        // Step 1: Mark rows & columns
+        
         for(int i = 0; i < m; i++) {
             if(matrix[i][0] == 0)
                 firstColZero = true;
