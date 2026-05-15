@@ -1,19 +1,19 @@
 class Solution {
 public:
     int rob(vector<int>& nums) {
-        int prev2 = 0;
-        int prev1 = 0;
+        int n = nums.size();
 
-        for (int money : nums) {
-            int robCurrent = money + prev2;
-            int skipCurrent = prev1;
+        if (n == 1) return nums[0];
 
-            int current = max(robCurrent, skipCurrent);
+        vector<int> dp(n);
 
-            prev2 = prev1;
-            prev1 = current;
+        dp[0] = nums[0];
+        dp[1] = max(nums[0], nums[1]);
+
+        for (int i = 2; i < n; i++) {
+            dp[i] = max(dp[i - 1], nums[i] + dp[i - 2]);
         }
 
-        return prev1;
+        return dp[n - 1];
     }
 };
