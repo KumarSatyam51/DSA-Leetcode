@@ -3,7 +3,8 @@ public:
     int robRange(vector<int>& nums, int start, int end) {
         int len = end - start + 1;
 
-        if (len == 1) return nums[start];
+        if (len == 1)
+         return nums[start];
 
         vector<int> dp(len);
 
