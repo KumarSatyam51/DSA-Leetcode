@@ -12,7 +12,8 @@ public:
 
             int rem = sum % k;
 
-            if (rem < 0) rem += k;
+            if (rem < 0) 
+            rem += k;
 
             ans += freq[rem];
             freq[rem]++;
